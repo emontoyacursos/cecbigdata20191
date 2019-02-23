@@ -6,13 +6,11 @@
 
 Ambari Web
 
-    https://hdp1.dis.eafit.edu.co (sandbox)
-    https://hdp2.dis.eafit.edu.co (cluster)
+    https://hdp1.dis.eafit.edu.co
 
 Terminal:
 
-    https://hdp1shell.dis.eafit.edu.co (sandbox)
-    https://hdp2shell.dis.eafit.edu.co (cluster)
+    https://hdp1shell.dis.eafit.edu.co
 
 Usuarios:
 
@@ -27,3 +25,7 @@ Usuarios:
 ## 1. SISTEMA DE ARCHIVOS HDFS
 
 * [HDFS](01-hdfs)
+
+## 2. BASES DE DATOS - HIVE & SQOOP
+
+* [HIVE](02-hive)
