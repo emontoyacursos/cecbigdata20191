@@ -4,19 +4,25 @@
 
 ## CONEXIÓN AL CLUSTER
 
-Ambari Web
-
+### Hortonworks:
+Ambari Web:
     https://hdp1.dis.eafit.edu.co
 
 Terminal:
 
     https://hdp1shell.dis.eafit.edu.co
 
-Usuarios:
+### Cloudera:
+HUE Web:    
+    https://hue1.dis.eafit.edu.co
+
+Terminal:
+    https://ssh1.dis.eafit.edu.co
+
+### Usuarios:
 
     username: cec##curso
     password: <enviado por email>
-
 
 ## ->DATASETS
 
