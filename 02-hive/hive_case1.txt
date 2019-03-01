@@ -15,7 +15,7 @@ Password: caoba
 
 importar datos via sqoop:
 
-$ sqoop import-all-tables --connect jdbc:mysql://192.168.10.80:3306/retail_db --username=retail_dba --password=caoba --hive-database cec##curso  --hive-overwrite --warehouse-dir=/tmp/<username>/retail_db --hive-import --mysql-delimiters -m 1 
+$ sqoop import-all-tables --connect jdbc:mysql://192.168.10.80:3306/retail_db --username=retail_dba --password=caoba --hive-database cec##curso  --hive-overwrite --warehouse-dir=/tmp/<username>/retail_db --hive-import --mysql-delimiters -m 1
 
 -- CATEGORIAS MÁS POPULARES DE PRODUCTOS
 
@@ -78,7 +78,15 @@ $ hdfs dfs -mkdir /user/<username>/warehouse/access_logs_etl
     ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
     LOCATION '/user/<username>/warehouse/access_logs_etl';
 
-> ADD JAR /usr/hdp/2.6.5.0-292/hive/lib/hive-contrib.jar;
+
+# para HortonWorks
+
+> ADD JAR /usr/hdp/3.0.1.0-187/hive/lib/hive-contrib.jar;
+
+# para Cloudera:
+> ADD JAR /usr/lib/hive/lib/hive-contrib.jar
+
+
 > INSERT OVERWRITE TABLE etl_access_logs SELECT * FROM tmp_access_logs;
 
 --- MUESTRE LOS PRODUCTOS MÁS VISITADOS
