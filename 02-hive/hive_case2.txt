@@ -1,0 +1,29 @@
+# BIKESHARE
+
+# Cual es la estación más demandada?
+
+select startterminal, startstation, count(*) cnt 
+from trip 
+group by startterminal, startstation
+order by cnt limit 10;
+
+# Desde la estación más solicitada, cuales son los 10 destinos más utilizados?
+
+select s.station_id, s.name, s.lat, s.long, count(1) as count
+from trip t
+join station s on s.station_id = t.endterminal
+where t.startterminal = 70
+group by s.station:id, s.name, s.lat, s.long
+order by count desc limit 10
+
+
+# Cual es en número de viajes y duración promedio hora a hora?
+SELECT hour, COUNT(1) AS trips, ROUND(AVG(duration) / 60) AS avg_duration
+FROM (SELECT
+CAST(SPLIT(SPLIT(t.startdate, ' ')[1], ':')[0] AS INT) AS hour,
+t.duration AS duration
+FROM trips t
+WHERE
+t.startterminal = 70 AND t.duration IS NOT NULL
+) r
+GROUP BY hour ORDER BY hour ASC;
