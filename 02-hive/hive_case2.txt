@@ -13,7 +13,7 @@ select s.station_id, s.name, s.lat, s.long, count(1) as count
 from trip t
 join station s on s.station_id = t.endterminal
 where t.startterminal = 70
-group by s.station:id, s.name, s.lat, s.long
+group by s.station_id, s.name, s.lat, s.long
 order by count desc limit 10
 
 
